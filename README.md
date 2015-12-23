@@ -9,7 +9,7 @@ Install
 Install from git using pip:
 
 ```bash
-pip install -e git+git@github.com:jonykalavera/django-tastypie-batch.git#egg=django-tastypie-batch
+pip install -e git+https://github.com/jonykalavera/django-tastypie-batch.git#egg=django-tastypie-batch
 ```
 
 Add `tastypie_batch` to your `INSTALLED_APPS`.

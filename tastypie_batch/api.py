@@ -6,6 +6,7 @@ except ImportError:
 import re
 import sys
 import traceback
+import urllib
 
 from django.conf import settings
 from django.conf.urls import url, patterns, include
@@ -83,7 +84,7 @@ class BatchEndpointMixin(object):
             params = {}
             params.update(req.get('params', {}))
             response_obj = {
-                'path': path,
+                'path': urllib.quote(path),
                 'params': params,
             }
             valid_path = re.search(self.prefix, path)

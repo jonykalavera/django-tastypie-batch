@@ -90,7 +90,8 @@ class BatchEndpointMixin(object):
             valid_path = re.search(self.prefix, path)
             if valid_path:
                 try:
-                    response = self.client.get(req.get('path'), params)
+                    setattr(self, '_client', Client(**request.META))
+                    response = self.client.get(req['path'], params)
                     # assert False, dir(response)
                     response_obj['status'] = response.status_code
                     response_obj['body'] = response.content
